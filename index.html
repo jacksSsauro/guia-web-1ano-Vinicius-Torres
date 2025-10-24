@@ -3,104 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guia Profissional de Desenvolvimento Web</title>
-    
-    <!-- Google Fonts -->
+    <title>Player de Música</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Estilos -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <header>
         <nav>
-            <h1>Guia Profissional de Desenvolvimento Web</h1>
-            <ul>
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="pages/tecnologias.html">Tecnologias</a></li>
-                <li><a href="pages/boas-praticas.html">Boas Práticas</a></li>
-                <li><a href="pages/fluxo.html">Fluxo</a></li>
-                <li><a href="pages/quiz.html">Quiz</a></li>
-            </ul>
+            <h1>Meu Player de Música</h1>
         </nav>
     </header>
 
     <main>
-        <section id="hero">
-            <h2>Seu Caminho no Desenvolvimento Web</h2>
-            <p>Entenda o que são HTML, CSS, JS e navegue por um guia completo de boas práticas, tecnologias e fluxo de trabalho.</p>
-            <a href="#o-que-e" class="btn">Começar Agora</a>
+        <!-- Seção principal com a lista de músicas -->
+        <section id="biblioteca">
+            <h2>Minha Biblioteca</h2>
+            <!-- Container onde as músicas serão renderizadas via JavaScript -->
+            <div id="lista-de-musicas" class="grid-musicas">
+                <!-- Cards de música serão inseridos aqui via JavaScript -->
+            </div>
         </section>
 
-        <section id="o-que-e">
-            <h2>O que é HTML, CSS e JavaScript?</h2>
-            <div class="cards-container">
-                <article class="card">
-                    <h3>HTML</h3>
-                    <p>HTML é a linguagem de marcação que define a estrutura do seu conteúdo web. É o esqueleto de toda página web.</p>
-                    <div class="code-block">
-                        <code>
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-    &lt;head&gt;
-        &lt;title&gt;Minha página&lt;/title&gt;
-    &lt;/head&gt;
-    &lt;body&gt;
-        &lt;h1&gt;Olá, mundo!&lt;/h1&gt;
-    &lt;/body&gt;
-&lt;/html&gt;
-                        </code>
-                    </div>
-                    <p class="quando-usar">Quando usar: Para criar a estrutura básica de qualquer página web, definindo elementos como cabeçalhos, parágrafos, listas e links.</p>
-                </article>
-
-                <article class="card">
-                    <h3>CSS</h3>
-                    <p>CSS é a linguagem que estiliza sua página web. Define cores, layouts, espaçamentos e como seu site se adapta a diferentes telas.</p>
-                    <div class="code-block">
-                        <code>
-.card {
-    background: white;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-                        </code>
-                    </div>
-                    <p class="quando-usar">Quando usar: Para estilizar elementos HTML, criar layouts responsivos e garantir uma experiência visual consistente.</p>
-                </article>
-
-                <article class="card">
-                    <h3>JavaScript</h3>
-                    <p>JavaScript é a linguagem de programação que torna suas páginas interativas. Permite criar comportamentos dinâmicos e manipular conteúdo em tempo real.</p>
-                    <div class="code-block">
-                        <code>
-function saudacao() {
-    const nome = prompt("Qual é seu nome?");
-    alert(`Olá, ${nome}! Bem-vindo!`);
-}
-                        </code>
-                    </div>
-                    <p class="quando-usar">Quando usar: Para adicionar interatividade, validar formulários, fazer requisições a APIs e criar animações dinâmicas.</p>
-                </article>
+        <!-- Player fixo na parte inferior -->
+        <section id="player">
+            <div class="info-musica">
+                <img src="https://via.placeholder.com/60" alt="Capa do álbum" id="capa-atual">
+                <div class="texto-musica">
+                    <h3 id="titulo-atual">Selecione uma música</h3>
+                    <p id="artista-atual">-</p>
+                </div>
+            </div>
+            
+            <div class="controles">
+                <button id="btn-anterior">⏮️</button>
+                <button id="btn-play">▶️</button>
+                <button id="btn-proximo">⏭️</button>
+            </div>
+            
+            <div class="volume">
+                <span>🔊</span>
+                <input type="range" id="volume-control" min="0" max="100" value="50">
             </div>
         </section>
     </main>
 
-    <footer>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="pages/tecnologias.html">Tecnologias</a></li>
-                <li><a href="pages/boas-praticas.html">Boas Práticas</a></li>
-                <li><a href="pages/fluxo.html">Fluxo</a></li>
-                <li><a href="pages/quiz.html">Quiz</a></li>
-            </ul>
-        </nav>
-        <p>© 2024 Guia Profissional de Desenvolvimento Web. Desenvolvido por Vinícius Torres</p>
-    </footer>
-
-    <!-- Scripts -->
     <script src="js/app.js"></script>
 </body>
 </html>

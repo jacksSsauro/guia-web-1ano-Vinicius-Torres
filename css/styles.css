@@ -1,9 +1,10 @@
 /* Reset e variáveis globais */
 :root {
-    --primary-color: #3498db;
-    --secondary-color: #2ecc71;
-    --dark-color: #2c3e50;
-    --light-color: #ecf0f1;
+    --primary-color: #1DB954;    /* Verde do Spotify */
+    --dark-color: #121212;       /* Preto do Spotify */
+    --gray-dark: #282828;        /* Cinza escuro do Spotify */
+    --gray-light: #B3B3B3;       /* Cinza claro do Spotify */
+    --text-color: #FFFFFF;       /* Texto branco */
     --font-heading: 'Poppins', sans-serif;
     --font-body: 'Inter', sans-serif;
 }
@@ -17,13 +18,14 @@
 body {
     font-family: var(--font-body);
     line-height: 1.6;
-    color: var(--dark-color);
+    color: var(--text-color);
+    background-color: var(--dark-color);
 }
 
 /* Header e navegação */
 header {
-    background-color: white;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: var(--gray-dark);
+    padding: 1rem;
     position: fixed;
     width: 100%;
     top: 0;
@@ -33,10 +35,7 @@ header {
 nav {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    padding: 0.5rem;
 }
 
 nav h1 {
@@ -45,163 +44,154 @@ nav h1 {
     color: var(--primary-color);
 }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 2rem;
-}
-
-nav a {
-    text-decoration: none;
-    color: var(--dark-color);
-    font-weight: 500;
-    transition: color 0.3s;
-}
-
-nav a:hover,
-nav a.active {
-    color: var(--primary-color);
-}
-
-/* Hero Section */
-#hero {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+/* Main content */
+main {
+    margin-top: 80px;
     padding: 2rem;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    color: white;
+    padding-bottom: 120px; /* Espaço para o player fixo */
 }
 
-#hero h2 {
-    font-family: var(--font-heading);
-    font-size: 3rem;
-    margin-bottom: 1rem;
-}
-
-#hero p {
-    font-size: 1.2rem;
-    max-width: 600px;
-    margin-bottom: 2rem;
-}
-
-.btn {
-    display: inline-block;
-    padding: 1rem 2rem;
-    background-color: white;
-    color: var(--primary-color);
-    text-decoration: none;
-    border-radius: 30px;
-    font-weight: 600;
-    transition: transform 0.3s;
-}
-
-.btn:hover {
-    transform: translateY(-3px);
-}
-
-/* Cards Section */
-#o-que-e {
-    padding: 5rem 2rem;
-    background-color: var(--light-color);
-}
-
-#o-que-e h2 {
-    text-align: center;
-    font-family: var(--font-heading);
-    font-size: 2.5rem;
-    margin-bottom: 3rem;
-}
-
-.cards-container {
+#biblioteca {
     max-width: 1200px;
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
 }
 
-.card {
-    background: white;
-    border-radius: 8px;
-    padding: 2rem;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.card h3 {
+#biblioteca h2 {
     font-family: var(--font-heading);
-    color: var(--primary-color);
-    margin-bottom: 1rem;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--text-color);
 }
 
-.code-block {
-    background: #f8f9fa;
+.grid-musicas {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.musica-card {
+    background: var(--gray-dark);
+    border-radius: 8px;
     padding: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.musica-card:hover {
+    background: var(--gray-light);
+}
+
+.musica-card img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
     border-radius: 4px;
-    margin: 1rem 0;
-    overflow-x: auto;
+    margin-bottom: 0.5rem;
 }
 
-code {
-    font-family: 'Consolas', monospace;
-    white-space: pre;
+.musica-card h3 {
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+    color: var(--text-color);
 }
 
-.quando-usar {
-    font-style: italic;
-    color: #666;
-    margin-top: 1rem;
+.musica-card p {
+    font-size: 0.9rem;
+    color: var(--gray-light);
 }
 
-/* Footer */
-footer {
-    background-color: var(--dark-color);
-    color: white;
-    padding: 2rem;
+/* Player fixo */
+#player {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--gray-dark);
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.3);
 }
 
-footer nav {
-    margin-bottom: 1rem;
+.info-musica {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex: 1;
 }
 
-footer ul {
+.info-musica img {
+    width: 60px;
+    height: 60px;
+    border-radius: 4px;
+}
+
+.texto-musica h3 {
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+
+.texto-musica p {
+    font-size: 0.8rem;
+    color: var(--gray-light);
+}
+
+.controles {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex: 1;
     justify-content: center;
 }
 
-footer a {
-    color: white;
+.controles button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-color);
+    transition: transform 0.2s;
 }
 
-footer p {
-    text-align: center;
-    font-size: 0.9rem;
-    opacity: 0.8;
+.controles button:hover {
+    transform: scale(1.1);
+}
+
+.volume {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex: 1;
+    justify-content: flex-end;
+}
+
+.volume input[type="range"] {
+    width: 100px;
 }
 
 /* Responsividade */
 @media (max-width: 768px) {
-    nav {
-        flex-direction: column;
-        text-align: center;
+    main {
+        padding: 1rem;
+        padding-bottom: 160px;
     }
 
-    nav h1 {
-        margin-bottom: 1rem;
+    .grid-musicas {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     }
 
-    nav ul {
+    #player {
         flex-direction: column;
         gap: 1rem;
+        padding: 0.5rem;
     }
 
-    #hero h2 {
-        font-size: 2rem;
+    .info-musica {
+        justify-content: center;
     }
 
-    .cards-container {
-        grid-template-columns: 1fr;
+    .volume {
+        display: none;
     }
 }
