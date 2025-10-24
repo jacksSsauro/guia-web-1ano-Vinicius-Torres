@@ -3,27 +3,27 @@ const musicas = [
     {
         titulo: "Shape of You",
         artista: "Ed Sheeran",
-        capaUrl: "https://via.placeholder.com/200?text=Shape+of+You"
+        capaUrl: "https://i.scdn.co/image/ab67616d0000b273ba5db46f4b838ef6027e6f96"
     },
     {
         titulo: "Blinding Lights",
         artista: "The Weeknd",
-        capaUrl: "https://via.placeholder.com/200?text=Blinding+Lights"
+        capaUrl: "https://i.scdn.co/image/ab67616d0000b2738863bc11d2aa12b54f5aeb36"
     },
     {
         titulo: "Dance Monkey",
         artista: "Tones and I",
-        capaUrl: "https://via.placeholder.com/200?text=Dance+Monkey"
+        capaUrl: "https://i.scdn.co/image/ab67616d0000b2739f73032b2ef71017d6110d69"
     },
     {
         titulo: "Don't Start Now",
         artista: "Dua Lipa",
-        capaUrl: "https://via.placeholder.com/200?text=Dont+Start+Now"
+        capaUrl: "https://i.scdn.co/image/ab67616d0000b273bd26ede1ae69327010d49946"
     },
     {
         titulo: "Watermelon Sugar",
         artista: "Harry Styles",
-        capaUrl: "https://via.placeholder.com/200?text=Watermelon+Sugar"
+        capaUrl: "https://i.scdn.co/image/ab67616d0000b273b1030be10e274486c5e4a23a"
     }
 ];
 
