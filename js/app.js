@@ -13,7 +13,7 @@ const musicas = [
     {
         titulo: "Dance Monkey",
         artista: "Tones and I",
-        capaUrl: "https://i.scdn.co/image/ab67616d0000b2739f73032b2ef71017d6110d69"
+        capaUrl: "https://i.scdn.co/image/ab67616d0000b27348246c30c53f65c44b87d2b6"
     },
     {
         titulo: "Don't Start Now",
@@ -23,7 +23,7 @@ const musicas = [
     {
         titulo: "Watermelon Sugar",
         artista: "Harry Styles",
-        capaUrl: "https://i.scdn.co/image/ab67616d0000b273b1030be10e274486c5e4a23a"
+        capaUrl: "https://i.scdn.co/image/ab67616d0000b2734e0362c225863f6ae2432651"
     }
 ];
 
